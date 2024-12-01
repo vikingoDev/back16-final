@@ -59,7 +59,7 @@ JWT_SECRET=your_super_secret_key
 
 Inicia el servidor:
 ```
-nodemon server.js
+node server.js
 ```
 
 # Variables de Entorno
@@ -85,7 +85,7 @@ Body:
   "password": "admin"
 }
 ```
-Respuesta:
+- Respuesta:
 ```
 {
   "message": "Inicio de sesión exitoso",
@@ -93,16 +93,17 @@ Respuesta:
 }
 ```
 
-# Privado (Requieren Token JWT)
+## Privado (Requieren Token JWT)
+
 3. GET /api/autos/
 - Descripción: Lista todos los autos.
-- Headers:
+- Seleccionar la pestaña "Headers" e ingresar los siguientes valores en su respectiva columna:
 ```
 {
-  "Authorization": "Bearer <tu_token>"
+  "Authorization" : "Bearer <tu_token>"
 }
 ```
-Respuesta:
+- Respuesta:
 ```
 [
   {
@@ -118,7 +119,7 @@ Respuesta:
 ]
 ```
 4. POST /api/autos/agregar
-Descripción: Crea un nuevo auto.
+- Descripción: Crea un nuevo auto.
 Body:
 ```
 {
@@ -131,7 +132,7 @@ Body:
   "precio": 30000
 }
 ```
-Respuesta:
+- Respuesta:
 ```
 {
   "_id": "id_auto",
@@ -146,37 +147,37 @@ Respuesta:
 ```
 
 5. PUT /api/autos/:id
-Descripción: Actualiza un auto existente.
-Body: Campos que deseas actualizar.
-Respuesta: Auto actualizado.
+- Descripción: Actualiza un auto existente.
+- Body: Campos que deseas actualizar.
+- Respuesta: Auto actualizado.
 
 7. DELETE /api/autos/:id
-Descripción: Elimina un auto por ID.
-Respuesta: Confirmación de eliminación.
+- Descripción: Elimina un auto por ID.
+- Respuesta: Confirmación de eliminación.
 
 # Autenticación
 
-Inicia sesión en el endpoint /api/auth/login.
-Copia el token proporcionado.
-Añade el token al header de las solicitudes protegidas:
+- Inicia sesión en el endpoint /api/auth/login.
+- Copia el token proporcionado.
+- Añade el token al header de las solicitudes protegidas:
 ```
 {
     "Authorization": "Bearer <tu_token>"
 }
 ```
 
-Tecnologías Usadas
-Node.js
-Express
-MongoDB Atlas
-Mongoose
-JWT
-dotenv
-bcrypt
+# Tecnologías Usadas
+- Node.js
+- Express
+- MongoDB Atlas
+- Mongoose
+- JWT
+- dotenv
+- bcrypt
 
 
-Notas
-Usuario de prueba:
-Email: admin@example.com
-Password: admin
-Duración del token JWT: 1 hora
+# Notas
+## Usuario de prueba:
+- Email: admin@example.com
+- Password: admin
+- Duración del token JWT: 1 hora
