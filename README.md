@@ -151,15 +151,23 @@ Body:
 - Body: Campos que deseas actualizar.
 - Respuesta: Auto actualizado.
 
-7. DELETE /api/autos/:id
+6. DELETE /api/autos/:id
 - Descripción: Elimina un auto por ID.
 - Respuesta: Confirmación de eliminación.
 
-# Autenticación
+7. POST /auth/login
+- Descripción: Ruta de autenticación (login). Devuelve un JWT para el acceso a rutas protegidas como POST, PUT y DELETE.
 
-- Inicia sesión en el endpoint /api/auth/login.
-- Copia el token proporcionado.
-- Añade el token al header de las solicitudes protegidas:
+8. POST /auth/register (Opcional)
+- Descripción: Ruta para registrar un nuevo usuario. Si no se implementa, los datos del usuario ejemplo serán los predeterminados para las pruebas.
+
+# Autenticación
+## Rutas con autenticación:
+- POST /autos/agregar
+- PUT /autos/:id
+- DELETE /productos/:id
+
+- Estas rutas requieren iniciar sesión en el endpoint /api/auth/login, copiar el token proporcionado y agregarrlo al header de las solicitudes protegidas:
 ```
 {
     "Authorization": "Bearer <tu_token>"
