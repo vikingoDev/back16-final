@@ -7,6 +7,11 @@ const authRoutes = require('./src/routes/authRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Ruta principal
+app.get("/", (req, res) => {
+    res.send("API funcionando correctamente");
+});
+
 // Middleware
 app.use(express.json());
 app.use('/api/autos', autosRoutes);
